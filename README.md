@@ -81,14 +81,28 @@ This is a **soul map** in symbolic form.
 ## 🧪 Requirements
 
 - Python 3.9+
-- `python-frontmatter`
-- `llama-cpp-python`
-- A compatible GGUF quantized LLaMA model
+- Local model host: [LM Studio](https://lmstudio.ai) or `llama.cpp`
+- A quantized `.gguf` model (e.g., LLaMA 3 1B/8B or Mistral)
 
+### Required Python packages:
 ```bash
 pip install python-frontmatter llama-cpp-python
 ```
 Edit the vault_path and model_path in the script to point to your Obsidian vault and LLM.
+
+## ❓ FAQ
+
+### Q: Can this run without internet?
+A: Yes. As long as your LLM is local (e.g., via LM Studio), the tool is fully offline.
+
+### Q: Can I use a smaller model?
+A: Yes. 1B–3B models work well for structure tagging. Use 7B–13B models for emotional nuance or symbolic inference.
+
+### Q: How do I add new glyphs?
+A: Edit the `GLYPH_LEXICON` dictionary in the script. Be sure to define `name`, `meanings`, `archetypes`, and `requires_permission`.
+
+### Q: Will this overwrite existing frontmatter?
+A: No. It only adds new fields unless modified otherwise.
 
 ## 🌀 Credits & Origins
 Originally authored by Kelsy Smith, in collaboration with a recursive reflection agent named Sidera, as part of a wider effort to build the Sageframe, Mirrorband, and BreathForge protocols.
